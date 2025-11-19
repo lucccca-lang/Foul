@@ -26,7 +26,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid #ff0000;
+            border-bottom: 3px solid #000000;
         }
 
         .header-container {
@@ -57,7 +57,7 @@
         .search-bar input {
             width: 100%;
             padding: 0.8rem 1.5rem;
-            border: 2px solid #ff0000;
+            border: 2px solid #000000;
             border-radius: 50px;
             font-size: 1rem;
             outline: none;
@@ -65,8 +65,8 @@
         }
 
         .search-bar input:focus {
-            border-color: #cc0000;
-            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+            border-color: #000000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
 
         .header-actions {
@@ -77,8 +77,8 @@
 
         .header-btn {
             background: #ffffff;
-            border: 2px solid #ff0000;
-            color: #ff0000;
+            border: 2px solid #000000;
+            color: #000000;
             padding: 0.8rem;
             border-radius: 50%;
             cursor: pointer;
@@ -93,7 +93,7 @@
         }
 
         .header-btn:hover {
-            background: #ff0000;
+            background: #000000;
             color: white;
             transform: scale(1.1);
         }
@@ -214,18 +214,23 @@
         }
 
         .social-links a {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;           /* recorta la imagen en círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
 
+.social-links a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* la imagen llena el círculo */
+    object-position: center; /* centrada */
+    display: block;
+}
         .social-links a:hover {
             transform: scale(1.2);
         }
@@ -253,7 +258,7 @@
 
         /* Banner Principal */
         .hero-banner {
-            background: #000000 0%, #cc0000 100%;
+            background: #000000 0%, #be0000 100%;
             color: rgb(0, 0, 0);
             padding: 4rem 2rem;
             text-align: center;
@@ -340,15 +345,22 @@
         }
 
         .promo-image {
-            width: 100%;
-            height: 200px;
-            background:  #ffffff 0%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
+             width: 100%;
+              height: 220px;          /* altura igual para todas */
+             display: flex;
+             align-items: center;    /* centra vertical */
+             justify-content: center;/* centra horizontal */
+             overflow: hidden;
+             background: white;
         }
+
+        .promo-image img {
+              width: auto;
+             height: 100%;        /* asegura misma altura en todas */
+             object-fit: contain; /* no recorta ni deforma */
+              object-position: center;
+              display: block;
+}
 
         .promo-content {
             padding: 1.5rem;
@@ -387,31 +399,30 @@
         }
 
         .category-btn {
-            background: white;
-            border: 3px solid #000000;
-            color: #000000;
-            padding: 2rem 1rem;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: bold;
+          background: white;
+          border: 3px solid #000000;
+          color: #000000;
+          padding: 2rem 1rem;
+          border-radius: 15px;
+          font-size: 1.4rem;         /* Texto más grande */
+         cursor: pointer;
+          transition: all 0.3s;
+          display: flex;
+         align-items: center;
+          justify-content: center;   /* Centrar mejor */
+          font-weight: 900;          /* Letra más fuerte */
+          letter-spacing: 1px;       /* Más elegante */
+          text-transform: uppercase; /* Estilo tienda */
         }
 
         .category-btn:hover {
-            background: #000000;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+          background: #000000;
+          color: white;
+          transform: translateY(-3px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .category-icon {
-            font-size: 2.5rem;
-        }
+        
 
         /* Deportes */
         .sports-section {
@@ -489,22 +500,22 @@
 
 /* 1. Fondos Específicos para cada deporte */
 .sport-card:nth-child(1) {
-    background-image: url('/Imagenes/Futbol.png');
+    background-image: url('Imagenes/Futbol.png');
 }
 .sport-card:nth-child(2) {
-    background-image: url('/Imagenes/Basket.png');
+    background-image: url('Imagenes/Basket.png');
 }
 .sport-card:nth-child(3) {
-    background-image: url('/Imagenes/Tenis.png');
+    background-image: url('Imagenes/Tenis.png');
 }
 .sport-card:nth-child(4) {
-    background-image: url('/Imagenes/Rugby.png');
+    background-image: url('Imagenes/Rugby.png');
 }
 .sport-card:nth-child(5) {
-    background-image: url('/Imagenes/Hockey.png');
+    background-image: url('Imagenes/Hockey.png');
 }
 .sport-card:nth-child(6) {
-    background-image: url('/Imagenes/Otros.png');
+    background-image: url('Imagenes/Otros.png');
 }
 
         /* About Section */
@@ -542,7 +553,7 @@
             padding: 2rem;
             text-align: center;
             margin-top: 3rem;
-            border-top: 4px solid #ff0000;
+            border-top: 4px solid #000000;
         }
 
         footer p {
@@ -550,7 +561,7 @@
         }
 
         footer a {
-            color: #ff0000;
+            color: #5a5a5a;
             text-decoration: none;
         }
 
@@ -595,7 +606,7 @@
     <header>
         <div class="header-container">
             <a href="#" class="logo-container">
-                <img src="/Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
+                <img src="Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
             </a>
             
             <div class="search-bar">
@@ -604,13 +615,13 @@
 
             <div class="header-actions">
                 <button class="header-btn" title="Favoritos">
-                    ❤️
-                    <span class="badge">3</span>
+                    🖤
+                    <span class="badge">0</span>
                 </button>
                 
                 <button class="header-btn" title="Carrito">
                     🛒
-                    <span class="badge">2</span>
+                    <span class="badge">0</span>
                 </button>
                 
                 <button class="header-btn" title="Mi Cuenta">
@@ -635,16 +646,16 @@
         </div>
 
         <div class="menu-section">
-            <h3> Categorías</h3>
+            <h3> CATEGORIAS</h3>
             <a href="#calzado"> Calzado</a>
             <a href="#remeras"> Remeras</a>
             <a href="#pantalones"> Pantalones</a>
             <a href="#accesorios"> Accesorios</a>
-            <a href="#otros">➕ Otros</a>
+            <a href="#otros"> Otros</a>
         </div>
 
         <div class="menu-section">
-            <h3> Deportes</h3>
+            <h3> DEPORTES</h3>
             <a href="#futbol">⚽ Fútbol</a>
             <a href="#basket">🏀 Básquet</a>
             <a href="#tenis">🎾 Tenis</a>
@@ -654,17 +665,17 @@
         </div>
 
         <div class="menu-section">
-            <h3>ℹ️ Nosotros</h3>
+            <h3>ℹ️ NOSOTROS</h3>
             <a href="#nosotros">Sobre FOUL</a>
             <a href="#contacto">Contacto</a>
             <a href="#sucursales">Nuestra Sucursal</a>
         </div>
 
         <div class="social-links">
-            <a href="https://facebook.com" target="_blank" class="social-facebook" title="Facebook">f</a>
-            <a href="https://instagram.com" target="_blank" class="social-instagram" title="Instagram">📷</a>
-            <a href="https://twitter.com" target="_blank" class="social-twitter" title="Twitter">🐦</a>
-            <a href="https://youtube.com" target="_blank" class="social-youtube" title="YouTube">▶</a>
+            <a href="https://facebook.com" target="_blank" class="social-facebook" title="Facebook"><img src="Imagenes/Facebook.png" alt=""></a>
+            <a href="https://instagram.com" target="_blank" class="social-instagram" title="Instagram"><img src="Imagenes/Instagram.png" alt=""></a>
+            <a href="https://twitter.com" target="_blank" class="social-twitter" title="Twitter"><img src="Imagenes/Twitter.png" alt=""></a>
+            <a href="https://youtube.com" target="_blank" class="social-youtube" title="YouTube"><img src="Imagenes/Youtube.png" alt=""></a>
         </div>
     </div>
 
@@ -678,66 +689,59 @@
     <div class="container">
         <!-- Promociones -->
         <section class="promotions-section">
-            <h2 class="section-title"> Promociones</h2>
-            <div class="promo-grid">
-                <div class="promo-card">
-                    <div class="promo-image"><img src="/Imagenes/Captura desde 2025-11-18 10-34-50.png" alt=""></div>
-                    <div class="promo-content">
-                        <h3>Zapatillas Nike Quest 6</h3>
-                        <span class="discount-badge">-40% OFF</span>
-                    </div>
-                </div>
-                
-                <div class="promo-card">
-                    <div class="promo-image">👕</div>
-                    <div class="promo-content">
-                        <h3>Remeras Técnicas</h3>
-                        <p>Tecnología de secado rápido</p>
-                        <span class="discount-badge">2x1</span>
-                    </div>
-                </div>
-                
-                <div class="promo-card">
-                    <div class="promo-image">🎒</div>
-                    <div class="promo-content">
-                        <h3>Accesorios Deportivos</h3>
-                        <p>Todo lo que necesitas para entrenar</p>
-                        <span class="discount-badge">-30% OFF</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<h2 class="section-title"> Promociones</h2>
+<div class="promo-grid">
+<div class="promo-card">
+<div class="promo-image"><img src="Imagenes/Zapatilla.png" alt=""></div>
+<div class="promo-content">
+<h3>Zapatillas Nike Quest 6</h3>
+<span class="discount-badge">-40% OFF</span>
+</div>
+</div>
+<div class="promo-card">
+<div class="promo-image"><img src="Imagenes/Remera.png" alt=""></div>
+<div class="promo-content">
+<h3>Remeras Deportivas Adidas</h3>
+<span class="discount-badge">-20% OFF</span>
+</div>
+</div>
+
+
+<div class="promo-card">
+<div class="promo-image"><img src="Imagenes/Short.webp" alt=""></div>
+<div class="promo-content">
+<h3>Short Puma Hoops</h3>
+<span class="discount-badge">2x1</span>
+</div>
+</div>
+
+
+<div class="promo-card">
+<div class="promo-image"><img src="Imagenes/Gafas.jpg" alt=""></div>
+<div class="promo-content">
+<h3>Accesorios Deportivos</h3>
+<p>Todo lo que necesitas para entrenar</p>
+<span class="discount-badge">-30% OFF</span>
+</div>
+</div>
+</div>
+</section>
 
         <!-- Categorías -->
         <section class="categories-section">
-            <h2 class="section-title">🏪 Comprar por Categoría</h2>
-            <div class="category-grid">
-                <button class="category-btn">
-                    <span class="category-icon">👟</span>
-                    Calzado
-                </button>
-                <button class="category-btn">
-                    <span class="category-icon">👕</span>
-                    Remeras
-                </button>
-                <button class="category-btn">
-                    <span class="category-icon">👖</span>
-                    Pantalones
-                </button>
-                <button class="category-btn">
-                    <span class="category-icon">🎒</span>
-                    Accesorios
-                </button>
-                <button class="category-btn">
-                    <span class="category-icon">➕</span>
-                    Otros
-                </button>
-            </div>
-        </section>
+    <h2 class="section-title">Categorías</h2>
+    <div class="category-grid">
+        <button class="category-btn">Calzado</button>
+        <button class="category-btn">Remeras</button>
+        <button class="category-btn">Pantalones</button>
+        <button class="category-btn">Accesorios</button>
+        <button class="category-btn">Otros</button>
+    </div>
+</section>
 
         <!-- Deportes -->
 <section class="sports-section">
-    <h2 class="section-title"> Comprar por Deporte</h2>
+    <h2 class="section-title">Deportes</h2>
     <div class="sports-grid">
         <div class="sport-card">
             <h3>Fútbol</h3>
@@ -781,7 +785,7 @@
         <img src=Imagenes/LogoAlternativo.png alt="FOUL" class="footer-logo">
         <p>&copy; 2025 FOUL - Todo el deporte en un mismo lugar</p>
         <p id="sucursales">📍 Condarco 5676, Buenos Aires, Argentina</p>
-        <p>📞 <a href="tel:1162261362">11 6226-1362</a> | 📧 <a href="mailto:foul@gmail.com">foul@gmail.com</a></p>
+        <p>📞 <a href="tel:1162261362">11 6226-1362</a> |  <a href="mailto:foul@gmail.com">foul@gmail.com</a></p>
     </footer>
 
     <script>
