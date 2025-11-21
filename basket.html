@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOUL - Tu Tienda Deportiva</title>
+    <title>Basket - FOUL</title>
+    
     <style>
-        * {
+        /* ... PEGA TODO EL CSS DE TU INDEX AQUÍ ... */
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -260,9 +262,9 @@
         .hero-banner {
             background: #000000 0%, #be0000 100%;
             color: rgb(0, 0, 0);
-            padding: 2rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -274,6 +276,7 @@
             left: 0;
             right: 0;
             bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-opacity="0.1" stroke-width="2"/></svg>');
             opacity: 0.1;
         }
 
@@ -598,178 +601,168 @@
                 height: 40px;
             }
         }
+        /* ESTILOS ADICIONALES PARA LA PÁGINA DE PRODUCTOS */
+        .category-header {
+            padding: 2rem;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin-bottom: 2rem;
+        }
+        .category-header h1 {
+            font-size: 2.5rem;
+            color: #000;
+            text-transform: uppercase;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: 1400px;
+            margin: 0 auto 4rem auto;
+        }
+        .product-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            background: white;
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-img-container {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .product-img-container img {
+            max-height: 80%;
+            max-width: 80%;
+            object-fit: contain;
+        }
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .product-price {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff0000;
+            margin: 0.5rem 0;
+        }
+        .btn-buy {
+            background: black;
+            color: white;
+            border: none;
+            padding:0.5rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-buy:hover {
+            background: #333;
+        }
+
+        .fav{
+            background: black;
+            color: white;
+            border: none;
+            padding:0.5rem 0.7rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .fav:hover {
+            background: #333;
+        }
+
+        .breadcrumb {
+            padding: 1rem 2rem;
+            font-size: 1.4rem;
+        }
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: black;
+            font-weight: bold;
+        }
     </style>
-</head>
+    
+    <link rel="stylesheet" href="styles.css"> </head>
 <body>
-    <!-- Header -->
+    
     <header>
         <div class="header-container">
-            <a href="#" class="logo-container">
-                <img src="Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
+            <a href="Pagina.html" class="logo-container"> <img src="Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
             </a>
-            
             <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
+                <input type="text" placeholder="Buscar calzado...">
             </div>
-
             <div class="header-actions">
-                <button class="header-btn" title="Favoritos">
-                    🖤
-                    <span class="badge">0</span>
-                </button>
-                
-                <button class="header-btn" title="Carrito">
-                    🛒
-                    <span class="badge">0</span>
-                </button>
-                
-                <button class="header-btn" title="Mi Cuenta">
-                    👤
-                </button>
-                
-                <button class="menu-btn" onclick="toggleMenu()">
-                    ☰ Menú
-                </button>
+                <button class="header-btn">🖤</button>
+                <button class="header-btn">🛒</button>
+                <button class="header-btn">👤</button>
             </div>
         </div>
     </header>
 
-    <!-- Overlay -->
-    <div class="overlay" onclick="toggleMenu()"></div>
-
-    <!-- Menú Lateral -->
-    <div class="side-menu" id="sideMenu">
-        <div class="menu-header">
-            <img src=Imagenes/LogoAlternativo.png alt="FOUL" class="menu-logo">
-            <button class="close-menu" onclick="toggleMenu()">✕</button>
-        </div>
-
-       <div class="menu-section">
-        <h3> CATEGORIAS</h3>
-            <a href="calzado.html"> Calzado</a>
-            <a href="remeras.html"> Remeras</a>
-            <a href="pantalones.html"> Pantalones</a>
-            <a href="accesorios.html"> Accesorios</a>
-            <a href="otros.html"> Otros</a>
-        </div>
-
-        <div class="menu-section">
-            <h3> DEPORTES</h3>
-            <a href="futbol.html">⚽ Fútbol</a>
-            <a href="basket.html">🏀 Básquet</a>
-            <a href="tenis.html">🎾 Tenis</a>
-            <a href="rugby.html">🏉 Rugby</a>
-            <a href="hockey.html">🏑 Hockey</a>
-            <a href="otros-deportes.html">➕ Otros Deportes</a>
-        </div>
-
-        <div class="menu-section">
-            <h3>ℹ️ NOSOTROS</h3>
-            <a href="nosotros.html">Sobre FOUL</a>
-            <a href="#sucursales">Nuestra Sucursal</a>
-        </div>
-
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank" class="social-facebook" title="Facebook"><img src="Imagenes/Facebook.png" alt=""></a>
-            <a href="https://instagram.com" target="_blank" class="social-instagram" title="Instagram"><img src="Imagenes/Instagram.png" alt=""></a>
-            <a href="https://twitter.com" target="_blank" class="social-twitter" title="Twitter"><img src="Imagenes/Twitter.png" alt=""></a>
-            <a href="https://youtube.com" target="_blank" class="social-youtube" title="YouTube"><img src="Imagenes/Youtube.png" alt=""></a>
-        </div>
+    <div class="breadcrumb">
+       <a href="Pagina.html">Inicio</a> > <span>Calzado</span>
     </div>
 
-    <!-- Banner Hero -->
-    <div class="hero-banner">
-        <h1> Bienvenido a FOUL</h1>
-        <p>Todo el deporte en un mismo lugar</p>
+    <div class="category-header">
+        <h1>Calzado</h1>
+        <p>Los mejores modelos para tu rendimiento.</p>
     </div>
 
-    <!-- Contenedor Principal -->
-    <div class="container">
-        <!-- Promociones -->
-        <section class="promotions-section">
-<h2 class="section-title"> Promociones</h2>
-<div class="promo-grid">
-<div class="promo-card">
-<div class="promo-image"><img src="Imagenes/Zapatilla.png" alt=""></div>
-<div class="promo-content">
-<h3>Zapatillas Nike Quest 6</h3>
-<span class="discount-badge">-40% OFF</span>
-</div>
-</div>
-<div class="promo-card">
-<div class="promo-image"><img src="Imagenes/Remera.png" alt=""></div>
-<div class="promo-content">
-<h3>Remeras Deportivas Adidas</h3>
-<span class="discount-badge">-20% OFF</span>
-</div>
-</div>
-
-
-<div class="promo-card">
-<div class="promo-image"><img src="Imagenes/Short.webp" alt=""></div>
-<div class="promo-content">
-<h3>Short Puma Hoops</h3>
-<span class="discount-badge">2x1</span>
-</div>
-</div>
-
-
-<div class="promo-card">
-<div class="promo-image"><img src="Imagenes/Gafas.jpg" alt=""></div>
-<div class="promo-content">
-<h3>Accesorios Deportivos</h3>
-<p>Todo lo que necesitas para entrenar</p>
-<span class="discount-badge">-30% OFF</span>
-</div>
-</div>
-</div>
-</section>
-
-        <!-- Categorías -->
-        <section class="categories-section">
-    <h2 class="section-title">Categorías</h2>
-    <div class="category-grid">
-        <a href="calzado.html" class="category-btn" style="text-decoration: none;">Calzado</a>
-        <a href="remeras.html" class="category-btn" style="text-decoration: none;">Remeras</a>
-        <a href="pantalones.html" class="category-btn" style="text-decoration: none;">Pantalones</a>
-        <a href="accesorios.html" class="category-btn" style="text-decoration: none;">Accesorios</a>
-        <a href="otros.html" class="category-btn" style="text-decoration: none;">Otros</a>
-    </div>
-</section>
-
-        <!-- Deportes -->
-<section class="sports-section">
-    <h2 class="section-title">Deportes</h2>
-    <div class="sports-grid">
-        <a href="futbol.html" class="sport-card" style="text-decoration: none;">
-            <h3>Fútbol</h3>
-        </a>
+    <div class="products-grid">
         
-        <a href="basket.html" class="sport-card" style="text-decoration: none;">
-            <h3>Básquet</h3>
-        </a>
-        
-        <a href="tenis.html" class="sport-card" style="text-decoration: none;">
-            <h3>Tenis</h3>
-        </a>
-        
-        <a href="rugby.html" class="sport-card" style="text-decoration: none;">
-            <h3>Rugby</h3>
-        </a>
-        
-        <a href="hockey.html" class="sport-card" style="text-decoration: none;">
-            <h3>Hockey</h3>
-        </a>
-        
-        <a href="otros-deportes.html" class="sport-card" style="text-decoration: none;">
-            <h3>Otros</h3>
-        </a>
-    </div>
-</section>
+        <div class="product-item">
+            <div class="product-img-container">
+                <img src="Imagenes/Zapatilla.png" alt="Nike Quest 6">
+            </div>
+            <div class="product-info">
+                <h3>Nike Quest 6</h3>
+                <span class="product-price">$120.000</span>
+                <button class="btn-buy">Agregar al Carrito</button>
+                <button class="fav">🤍</button>
+            </div>
+        </div>
 
-    </div>
+        <div class="product-item">
+            <div class="product-img-container">
+                <img src="Imagenes/Zapatilla.png" alt="Adidas Run">
+            </div>
+            <div class="product-info">
+                <h3>Adidas Run Falcon</h3>
+                <span class="product-price">$115.000</span>
+                <button class="btn-buy">Agregar al Carrito</button>
+                <button class="fav">🤍</button>
+            </div>
+        </div>
 
-    <!-- Footer -->
+        <div class="product-item">
+            <div class="product-img-container">
+                <img src="Imagenes/Zapatilla.png" alt="Puma Nitro">
+            </div>
+            <div class="product-info">
+                <h3>Puma Nitro</h3>
+                <span class="product-price">$130.000</span>
+                <button class="btn-buy">Agregar al Carrito</button>
+                <button class="fav">🤍</button>
+            </div>
+        </div>
+
+        </div>
+
     <footer id="contacto">
         <img src=Imagenes/LogoAlternativo.png alt="FOUL" class="footer-logo">
         <p>&copy; 2025 FOUL - Todo el deporte en un mismo lugar</p>
@@ -777,41 +770,5 @@
         <p>📞 <a href="tel:1162261362">11 6226-1362</a> |  <a href="mailto:foul@gmail.com">foul@gmail.com</a></p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('sideMenu');
-            const overlay = document.querySelector('.overlay');
-            menu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        // Cerrar menú con ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const menu = document.getElementById('sideMenu');
-                const overlay = document.querySelector('.overlay');
-                menu.classList.remove('active');
-                overlay.classList.remove('active');
-            }
-        });
-
-        // Smooth scroll para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Cerrar menú si está abierto
-                    const menu = document.getElementById('sideMenu');
-                    const overlay = document.querySelector('.overlay');
-                    menu.classList.remove('active');
-                    overlay.classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
