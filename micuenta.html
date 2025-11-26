@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remeras - FOUL</title>
+    <title>Mi Cuenta - FOUL</title>
     <style>
-        /* ... (Pega aquí TODOS los estilos que tienes en tu index.html) ... */
-        /* O puedes vincular un archivo .css externo si prefieres */
-    
+        /* --- PEGA AQUÍ LOS MISMOS ESTILOS DE TU INDEX.HTML --- */
+        /* (Header, Body, Footer, Menú, etc.) */
+
         * {
             margin: 0;
             padding: 0;
@@ -117,131 +117,6 @@
             font-weight: bold;
         }
 
-        .menu-btn {
-            background: #000000;
-            border: none;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
-            font-weight: bold;
-        }
-
-        .menu-btn:hover {
-            background: #000000;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Menú Lateral */
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100vh;
-            background: white;
-            box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-            transition: right 0.3s ease;
-            z-index: 2000;
-            overflow-y: auto;
-        }
-
-        .side-menu.active {
-            right: 0;
-        }
-
-        .menu-header {
-            background: #000000;
-            color: white;
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .menu-logo {
-            height: 40px;
-            width: auto;
-        }
-
-        .close-menu {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            transition: transform 0.3s;
-        }
-
-        .close-menu:hover {
-            transform: rotate(90deg);
-        }
-
-        .menu-section {
-            padding: 1.5rem;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .menu-section h3 {
-            color: #000000;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .menu-section a {
-            display: block;
-            padding: 0.8rem;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            margin-bottom: 0.5rem;
-        }
-
-        .menu-section a:hover {
-            background: #fff0f0;
-            padding-left: 1.5rem;
-            color: #000000;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            padding: 1.5rem;
-            justify-content: center;
-        }
-
-        .social-links a {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    overflow: hidden;           /* recorta la imagen en círculo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s;
-}
-
-.social-links a img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;       /* la imagen llena el círculo */
-    object-position: center; /* centrada */
-    display: block;
-}
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
-
-        .social-facebook { background: #1877f2; }
-        .social-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .social-twitter { background: #1da1f2; }
-        .social-youtube { background: #ff0000; }
 
         /* Overlay */
         .overlay {
@@ -427,128 +302,7 @@
 
         
 
-        /* Deportes */
-        .sports-section {
-    margin-bottom: 3rem;
-}
-
-.sports-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-}
-
-.sport-card {
-    /* Define un alto fijo para uniformar las tarjetas */
-    height: 220px; 
-    /* Fondo por defecto (se sobrescribe en los selectores específicos) */
-    background-color: #000000; 
-    background-size: cover; /* La imagen cubre todo el botón */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Asegura que no se repita */
-    
-    color: white; /* Texto blanco por defecto para que contraste con la imagen de fondo */
-    padding: 1rem; 
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    display: flex; 
-    flex-direction: column;
-    justify-content: flex-end; /* Alinea el texto en la parte inferior para que no tape la imagen */
-    align-items: center;
-    
-    /* Efecto de superposición oscura para asegurar la legibilidad del texto */
-    position: relative;
-    overflow: hidden;
-}
-
-/* Oscurecer la imagen de fondo para mejorar la legibilidad del texto */
-.sport-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Capa de color negro con 40% de opacidad */
-    z-index: 1;
-    transition: background 0.3s;
-}
-
-.sport-card:hover::before {
-    background: rgba(0, 0, 0, 0.2); /* Menos oscuro al pasar el ratón */
-}
-
-.sport-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-}
-
-.sport-card h3 {
-    font-weight: bold;
-    font-size: 1.3rem; /* Texto más grande para ser más visible */
-    margin-top: 0.5rem;
-    position: relative; /* Asegura que el texto esté por encima de la capa oscura */
-    z-index: 2; 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra para mejor contraste */
-}
-
-/* Eliminamos .sport-icon ya que la imagen será el fondo */
-.sport-icon {
-    display: none; 
-}
-
-
-/* 1. Fondos Específicos para cada deporte */
-.sport-card:nth-child(1) {
-    background-image: url('Imagenes/Futbol.png');
-}
-.sport-card:nth-child(2) {
-    background-image: url('Imagenes/Basket.png');
-}
-.sport-card:nth-child(3) {
-    background-image: url('Imagenes/Tenis.png');
-}
-.sport-card:nth-child(4) {
-    background-image: url('Imagenes/Rugby.png');
-}
-.sport-card:nth-child(5) {
-    background-image: url('Imagenes/Hockey.png');
-}
-.sport-card:nth-child(6) {
-    background-image: url('Imagenes/Otros.png');
-}
-
-        /* About Section */
-        .about-section {
-            background: #f9f9f9;
-            padding: 3rem 2rem;
-            margin: 3rem 0;
-            border-radius: 15px;
-            border: 2px solid #ff0000;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content h2 {
-            color: #ff0000;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        .about-content p {
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
+       
         /* Footer */
         footer {
             background: #000000;
@@ -602,11 +356,7 @@
                 height: 40px;
             }
         }
-    
-        /* REPLICA EXACTAMENTE EL CSS DE TU INDEX.HTML AQUÍ */
-        /* Para abreviar en esta respuesta, asumo que copiarás el CSS del paso anterior */
-        
-        /* --- Estilos extra para la página de productos --- */
+        /* ESTILOS ADICIONALES PARA LA PÁGINA DE PRODUCTOS */
         .category-header {
             padding: 2rem;
             text-align: center;
@@ -699,87 +449,191 @@
             color: black;
             font-weight: bold;
         }
+    
+        /* Para ahorrar espacio, asumo que copiarás el CSS general aquí */
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: #ffffff; overflow-x: hidden; }
+        
+        /* ... COPIA TODO TU CSS ANTERIOR AQUÍ ... */
+
+        /* ESTILOS DEL FORMULARIO DE CUENTA */
+        .account-container {
+            max-width: 500px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .form-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            color: #000;
+            border-bottom: 3px solid #ff0000;
+        }
+
+        .auth-form {
+            display: none; /* Oculto por defecto */
+            animation: fadeIn 0.5s;
+        }
+
+        .auth-form.active {
+            display: block; /* Visible si tiene la clase active */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #000;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #333;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .form-footer a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Estilos Header/Footer/Menu necesarios si no usas CSS externo */
+        header { background: #fff; padding: 1rem 2rem; border-bottom: 3px solid #000; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; gap: 2rem;}
+        .header-actions { display: flex; gap: 1.5rem; align-items: center; }
+        .logo-img { height: 50px; }
+        .header-btn { background: #ffffff; border: 2px solid #000000; color: #000000; padding: 0.8rem; border-radius: 50%; cursor: pointer; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; text-decoration: none;}
+        
+        
     </style>
-    
-    <link rel="stylesheet" href="styles.css"> </head>
+</head>
 <body>
-    
+
     <header>
         <div class="header-container">
-            <a href="Pagina.html" class="logo-container"> <img src="Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
+            <a href="Pagina.html" class="logo-container">
+                <img src="Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
             </a>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar remeras...">
-            </div>
+            
+            <div style="flex:1;"></div>
+
             <div class="header-actions">
-                <button class="header-btn">🖤</button>
-                <button class="header-btn">🛒</button>
-                <a href="micuenta.html" class="header-btn" title="Mi Cuenta" style="text-decoration: none;">
-                👤
-                </a>
+                <a href="micuenta.html" class="header-btn" title="Mi Cuenta" style="text-decoration: none; background: #000; color: #fff;">👤</a>
+                
             </div>
         </div>
     </header>
 
     <div class="breadcrumb">
-       <a href="Pagina.html">Inicio</a> > <span>Remeras</span>
+       <a href="Pagina.html">Inicio</a> > <span>Mi Cuenta</span>
     </div>
 
-    <div class="category-header">
-        <h1>Remeras</h1>
-        <p>Ajustada a tu gusto</p>
-    </div>
-
-    <div class="products-grid">
+    <div class="account-container">
         
-        <div class="product-item">
-            <div class="product-img-container">
-                <img src="Imagenes/Remera1.webp" alt="Puma">
-            </div>
-            <div class="product-info">
-                <h3>Puma Hiper</h3>
-                <span class="product-price">$50.000</span>
-                <button class="btn-buy">Agregar al Carrito</button>
-                <button class="fav">🤍</button>
-            </div>
+        <div class="form-tabs">
+            <button class="tab-btn active" onclick="switchTab('login')">Iniciar Sesión</button>
+            <button class="tab-btn" onclick="switchTab('register')">Crear Cuenta</button>
         </div>
 
-        <div class="product-item">
-            <div class="product-img-container">
-                <img src="Imagenes/Remera2.webp" alt="Under Armour Training">
+        <form id="loginForm" class="auth-form active">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="ejemplo@email.com" required>
             </div>
-            <div class="product-info">
-                <h3>Under Armour Training</h3>
-                <span class="product-price">$45.000</span>
-                <button class="btn-buy">Agregar al Carrito</button>
-                <button class="fav">🤍</button>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" placeholder="••••••••" required>
             </div>
-        </div>
+            <button type="submit" class="submit-btn">Ingresar</button>
+            <div class="form-footer">
+                <p><a href="recuperar.html">¿Olvidaste tu contraseña?</a></p>
+            </div>
+        </form>
 
-        <div class="product-item">
-            <div class="product-img-container">
-                <img src="Imagenes/Remera3.jpeg" alt="Nike Dri Fit">
+        <form id="registerForm" class="auth-form">
+            <div class="form-group">
+                <label>Nombre Completo</label>
+                <input type="text" placeholder="Juan Pérez" required>
             </div>
-            <div class="product-info">
-                <h3>Nike Dri Fit</h3>
-                <span class="product-price">$60.000</span>
-                <button class="btn-buy">Agregar al Carrito</button>
-                <button class="fav">🤍</button>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="ejemplo@email.com" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" placeholder="Crea una contraseña" required>
+            </div>
+            <div class="form-group">
+                <label>Confirmar Contraseña</label>
+                <input type="password" placeholder="Repite la contraseña" required>
+            </div>
+            <button type="submit" class="submit-btn">Crear Cuenta</button>
+        </form>
 
-        <div class="product-item">
-            <div class="product-img-container">
-                <img src="Imagenes/Remera4.webp" alt="Adidas Sport Club">
-            </div>
-            <div class="product-info">
-                <h3>Adidas Sport Club</h3>
-                <span class="product-price">$58.000</span>
-                <button class="btn-buy">Agregar al Carrito</button>
-                <button class="fav">🤍</button>
-            </div>
-        </div>
-        </div>
+    </div>
 
     <footer id="contacto">
         <img src=Imagenes/LogoAlternativo.png alt="FOUL" class="footer-logo">
@@ -788,5 +642,29 @@
         <p>📞 <a href="tel:1162261362">11 6226-1362</a> |  <a href="mailto:foul@gmail.com">foul@gmail.com</a></p>
     </footer>
 
+    <script>
+       
+        // Funcionalidad de las Pestañas (Login vs Registro)
+        function switchTab(tabName) {
+            // Obtener elementos
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            // Resetear clases de las pestañas
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Lógica de cambio
+            if (tabName === 'login') {
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+                tabs[0].classList.add('active'); // Activa la primera pestaña
+            } else {
+                loginForm.classList.remove('active');
+                registerForm.classList.add('active');
+                tabs[1].classList.add('active'); // Activa la segunda pestaña
+            }
+        }
+    </script>
 </body>
 </html>
