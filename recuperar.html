@@ -15,79 +15,45 @@
             </a>
             <div style="flex:1;"></div>
             <div class="header-actions">
-                <a href="micuenta.html" class="header-btn" title="Mi Cuenta">👤</a>
-                
+                <a href="micuenta.html" class="header-btn" title="Mi Cuenta" aria-label="Mi Cuenta"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
             </div>
         </div>
     </header>
 
-    
 
     <div class="recovery-container">
-        
+
+        <input type="checkbox" id="recoveryToggle" class="menu-toggle">
+
         <div id="recoveryFormContent">
-            <h2>Recuperar Contraseña</h2>
+            <h1>Recuperar Contraseña</h1>
             <p>Ingresa la dirección de correo electrónico asociada a tu cuenta y te enviaremos un enlace para restablecer tu contraseña.</p>
-            
-            <form onsubmit="simularEnvio(event)">
+            <form>
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="ejemplo@email.com" required>
+                    <label for="recEmail">Email</label>
+                    <input id="recEmail" autocomplete="email" type="email" placeholder="ejemplo@email.com" required>
                 </div>
-                <button type="submit" class="submit-btn">Enviar Instrucciones</button>
+                <label for="recoveryToggle" class="submit-btn">Enviar Instrucciones</label>
             </form>
         </div>
 
-        <div id="successMessage" class="success-message">
+        <div class="success-message" role="status">
             <span class="success-icon">✅</span>
-            <h3>¡Correo Enviado!</h3>
+            <h2>¡Correo Enviado!</h2>
             <p>Si existe una cuenta con ese email, recibirás las instrucciones en unos minutos.</p>
-            <a href="micuenta.html" class="submit-btn" style="display:inline-block; margin-top:1rem; text-decoration:none;">Volver a Iniciar Sesión</a>
+            <a href="micuenta.html" class="submit-btn">Volver a Iniciar Sesión</a>
         </div>
 
-        <a href="micuenta.html" class="back-link" id="backBtn">← Volver atrás</a>
+        <a href="micuenta.html" class="back-link">← Volver atrás</a>
 
     </div>
 
     <footer id="contacto">
-        <img src=Imagenes/LogoAlternativo.png alt="FOUL" class="footer-logo">
+        <img src="Imagenes/LogoAlternativo.png" alt="FOUL" class="footer-logo">
         <p>&copy; 2025 FOUL - Todo el deporte en un mismo lugar</p>
         <p id="sucursales">📍 Condarco 5676, Buenos Aires, Argentina</p>
         <p>📞 <a href="tel:1162261362">11 6226-1362</a> |  <a href="mailto:foul@gmail.com">foul@gmail.com</a></p>
     </footer>
 
-    <script>
-        // Funcionalidad del Menú
-        function toggleMenu() {
-            const menu = document.getElementById('sideMenu');
-            const overlay = document.querySelector('.overlay');
-            menu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const menu = document.getElementById('sideMenu');
-                const overlay = document.querySelector('.overlay');
-                if(menu){
-                    menu.classList.remove('active');
-                    overlay.classList.remove('active');
-                }
-            }
-        });
-
-        // Simulación de envío de correo
-        function simularEnvio(e) {
-            e.preventDefault(); // Evita que la página se recargue realmente
-            
-            const formContent = document.getElementById('recoveryFormContent');
-            const successMsg = document.getElementById('successMessage');
-            const backBtn = document.getElementById('backBtn');
-
-            // Efecto visual: Ocultar formulario y mostrar mensaje
-            formContent.style.display = 'none';
-            backBtn.style.display = 'none';
-            successMsg.style.display = 'block';
-        }
-    </script>
 </body>
 </html>
