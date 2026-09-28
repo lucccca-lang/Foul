@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accesorios - FOUL</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input type="checkbox" id="menuToggle" class="menu-toggle">
     <header>
         <div class="header-container">
-             <label for="menuToggle" class="menu-btn" aria-label="Abrir menú">
-            ☰
-        </label>
-            <a href="index.html" class="logo-container">
-                <img src="Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
-            </a>
+            <div class="header-brand">
+                <a href="index.html" class="logo-container">
+                    <img src="Imagenes/LogoPrincipal.png" alt="FOUL Logo" class="logo-img">
+                </a>
+                <h1 class="site-title">FOUL · Tienda deportiva</h1>
+            </div>
             <div class="search-bar">
                 <input type="text" placeholder="Buscar..." aria-label="Buscar productos">
                 <div class="search-panel" aria-label="Búsquedas rápidas">
@@ -24,7 +22,7 @@
                         <a href="calzado.html">Calzado</a>
                         <a href="remeras.html">Remeras</a>
                         <a href="pantalones.html">Pantalones</a>
-                        <a href="accesorios.html" class="activo" aria-current="page">Accesorios</a>
+                        <a href="accesorios.html">Accesorios</a>
                         <a href="otros.html">Otros</a>
                         <a href="futbol.html">Fútbol</a>
                         <a href="basket.html">Básquet</a>
@@ -41,66 +39,67 @@
                 <a href="micuenta.html" class="header-btn" title="Mi Cuenta" aria-label="Mi Cuenta"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
             </div>
         </div>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    Categorías
+                    <ul>
+                        <li><a href="calzado.html">Calzado</a></li>
+                        <li><a href="remeras.html">Remeras</a></li>
+                        <li><a href="pantalones.html">Pantalones</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                        <li><a href="otros.html">Otros</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Deportes
+                    <ul>
+                        <li><a href="futbol.html">Fútbol</a></li>
+                        <li><a href="basket.html">Básquet</a></li>
+                        <li><a href="tenis.html">Tenis</a></li>
+                        <li><a href="rugby.html">Rugby</a></li>
+                        <li><a href="hockey.html">Hockey</a></li>
+                        <li><a href="otros-deportes.html">Otros deportes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Nosotros
+                    <ul>
+                        <li><a href="nosotros.html">Sobre FOUL</a></li>
+                        <li><a href="#sucursales">Nuestra sucursal</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Redes sociales
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <label for="menuToggle" class="overlay"></label>
-   <div class="side-menu">
-        <div class="menu-header">
-            <a href="index.html">
-            <img src="Imagenes/LogoAlternativo.png" alt="FOUL" class="menu-logo">
-        </a>
 
-            <label for="menuToggle" class="close-menu" aria-label="Cerrar menú">✕</label>
-        </div>
-
-       <div class="menu-section">
-        <input type="checkbox" id="menuCategorias" class="menu-sub-toggle">
-        <label for="menuCategorias" class="menu-sub-header">CATEGORIAS</label>
-            <a href="calzado.html"> Calzado</a>
-            <a href="remeras.html"> Remeras</a>
-            <a href="pantalones.html"> Pantalones</a>
-            <a href="accesorios.html" class="active" aria-current="page"> Accesorios</a>
-            <a href="otros.html"> Otros</a>
-        </div>
-
-        <div class="menu-section">
-            <input type="checkbox" id="menuDeportes" class="menu-sub-toggle">
-            <label for="menuDeportes" class="menu-sub-header">DEPORTES</label>
-            <a href="futbol.html">Fútbol</a>
-            <a href="basket.html">Básquet</a>
-            <a href="tenis.html">Tenis</a>
-            <a href="rugby.html">Rugby</a>
-            <a href="hockey.html">Hockey</a>
-            <a href="otros-deportes.html">Otros Deportes</a>
-        </div>
-
-        <div class="menu-section">
-            <input type="checkbox" id="menuNosotros" class="menu-sub-toggle">
-            <label for="menuNosotros" class="menu-sub-header">NOSOTROS</label>
-            <a href="nosotros.html">Sobre FOUL</a>
-            <a href="#sucursales">Nuestra Sucursal</a>
-        </div>
-
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-facebook" title="Facebook"><img src="Imagenes/Facebook.png" alt="Facebook"></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-instagram" title="Instagram"><img src="Imagenes/Instagram.png" alt="Instagram"></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-twitter" title="Twitter"><img src="Imagenes/Twitter.png" alt="Twitter"></a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-youtube" title="YouTube"><img src="Imagenes/Youtube.png" alt="YouTube"></a>
-        </div>
-    </div>
+    <main>
 
     <nav class="breadcrumb" aria-label="Ruta de navegación">
        <a href="index.html">Inicio</a> > <span>Accesorios</span>
     </nav>
 
-    <div class="category-header">
-        <h1>Accesorios</h1>
+    <section class="category-header">
+        <h2>Accesorios</h2>
         <p>Adaptables a tu necesidad</p>
-    </div>
+    </section>
 
-    <h2 class="sr-only">Productos</h2>
+    <section class="products-grid">
 
-    <div class="products-grid">
+        <h2>Productos</h2>
         <div class="product-item">
             <div class="product-img-container">
                 <img loading="lazy" src="Imagenes/Accesorio1.webp" alt="Nike Vincha Swoosh">
@@ -148,13 +147,16 @@
                 <button class="fav" aria-label="Agregar a favoritos">🤍</button>
             </div>
         </div>
-        </div>
+    </section>
+
+    </main>
 
     <footer id="contacto">
         <img src="Imagenes/LogoAlternativo.png" alt="FOUL" class="footer-logo">
         <p>&copy; 2025 FOUL - Todo el deporte en un mismo lugar</p>
         <p id="sucursales">📍 Condarco 5676, Buenos Aires, Argentina</p>
         <p>📞 <a href="tel:1162261362">11 6226-1362</a> |  <a href="mailto:foul@gmail.com">foul@gmail.com</a></p>
+        <p class="footer-student">Alumno: Lucca Rossatti · Curso: 5°C · Año: 2026</p>
     </footer>
 
 
